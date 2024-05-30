@@ -1,3 +1,6 @@
 .bg-body-tertiary {
   background-color: aliceblue (255, 255, 255) !important;
 }
+.navbar {
+  padding: 20px;
+}
