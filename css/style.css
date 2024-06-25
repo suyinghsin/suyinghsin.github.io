@@ -26,3 +26,19 @@ img {
   width: 100%;
   bottom: auto;
 }
+.btn-outline-success {
+  --bs-btn-color: none;
+  --bs-btn-border-color: none;
+  --bs-btn-hover-color: none;
+  --bs-btn-hover-bg: #none;
+  --bs-btn-hover-border-color: none;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
+  --bs-btn-active-color: #none;
+  --bs-btn-active-bg: #none;
+  --bs-btn-active-border-color: #none;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #none;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #none;
+  --bs-gradient: none;
+}
