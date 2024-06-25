@@ -1,6 +1,28 @@
 .bg-body-tertiary {
-  background-color: aliceblue (255, 255, 255) !important;
+  background-color: rgb(255, 255, 255) (255, 255, 255) !important;
 }
 .navbar {
   padding: 20px;
+}
+.navbar-nav.me-auto.mb-2.mb-lg-0 {
+  margin-left: auto;
+  margin-right: 0 !important;
+}
+.serch_input {
+  position: relative;
+}
+
+.serch_input button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 40px;
+  border: none;
+}
+li.nav-item {
+  margin-right: 10px;
+}
+img {
+  width: 100%;
+  bottom: auto;
 }
