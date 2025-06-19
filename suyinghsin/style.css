@@ -1,0 +1,624 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  color: #1b1b1d;
+  font-family: "Lato", sans-serif;
+}
+img {
+  display: block;
+  width: 100%;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/*Utility Class*/
+.list-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.block {
+  display: block;
+}
+/* 跑馬燈容器 */
+.marquee-wrapper {
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  /* overflow: hidden; */
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0.08;
+}
+
+/* 內部容器：讓兩組文字連續滾動 */
+.marquee-track {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-text {
+  display: inline-block;
+  font-size: 10vw;
+  font-weight: 800;
+  color: #0077b6;
+  padding-right: 4vw; /* 兩段之間留點空隙 */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .marquee-wrapper {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    /* overflow: hidden; */
+    white-space: nowrap;
+    z-index: -1;
+    opacity: 0.08;
+  }
+
+  /*手機版開始*/
+  .marquee-wrapper {
+    position: absolute;
+    top: 0%;
+  }
+  .wrap {
+    margin: auto;
+    padding-inline: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  header {
+    padding: 12px 0px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .logo a {
+    text-indent: -999px;
+    display: block;
+    width: 24px;
+    height: 29px;
+    margin: 0 auto;
+    /* background-image: url(./img/logo-apple.png);  */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    /* overflow: hidden; */
+  }
+  /* 漢堡選單 */
+  header div.menu {
+    display: block;
+    width: 34px;
+    height: 26px;
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    cursor: pointer;
+  }
+  nav {
+    margin-left: auto;
+  }
+  nav.menulist {
+    /* 確保您的 JS toggleMenu 針對這個 class */
+    display: none; /* 預設隱藏 */
+    position: absolute; /* 定位菜單 */
+    top: 50px; /* 根據 header 高度調整 */
+    left: 0;
+    width: 100%;
+    background-color: white; /* 半透明背景 */
+    z-index: 100;
+    padding: 1rem 0;
+    box-shadow: 0 5px 10px white(0, 0, 0, 0.2);
+  }
+  nav.menulist.active {
+    display: block; /* 啟用時顯示 */
+  }
+  nav ul {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 讓手機選單項目居中 */
+  }
+  nav ul a {
+    display: block;
+    width: 100%;
+    text-align: center; /* 文字居中 */
+    padding: 0 14px; /* 移除外邊距，使用內邊距 */
+    color: black;
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+    text-decoration: none;
+  }
+  nav ul a:hover {
+    background-color: #0090f772;
+    color: #0090f7; /* 懸停時顏色變化 */
+  }
+  .carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  .section2 {
+    display: flex;
+    flex-direction: column; /* 手機版：卡片垂直堆疊 */
+    gap: 40px; /* 增加大卡片之間的間距 */
+    align-items: center; /* 讓整個 section2 的內容居中 */
+  }
+
+  .big-card {
+    display: flex;
+    flex-direction: column; /* 手機版：圖片和文字垂直堆疊 */
+    align-items: center; /* 內部內容居中 */
+    gap: 15px; /* 圖片和文字之間的間距 */
+    text-align: center; /* 文字居中 */
+    width: 100%; /* 確保卡片佔滿可用寬度 */
+    max-width: 380px; /* 限制手機上單個大卡片的最大寬度 */
+    padding: 25px 20px; /* 增加內邊距 */
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* 增加陰影效果 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .big-card:hover {
+    transform: translateY(-5px); /* 懸停時輕微上移 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* 懸停時陰影加深 */
+  }
+
+  .big-card:nth-child(even) {
+    /* 偶數個 big-card (第二個、第四個...) */
+    flex-direction: column; /* 手機版維持垂直堆疊 */
+    /* 這裡不需要特別處理順序，因為都是垂直堆疊 */
+  }
+
+  .big-card img {
+    width: 90%; /* 手機版圖片寬度調整 */
+    max-width: 300px; /* 限制圖片最大寬度 */
+    border-radius: 8px; /* 圖片圓角 */
+    object-fit: cover;
+    height: auto; /* 保持圖片比例 */
+  }
+
+  .big-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* 文字居中 */
+    gap: 8px; /* 標題和段落間距 */
+  }
+
+  .big-card-body h4 {
+    font-size: 1.5rem; /* 標題字體大小 */
+    font-weight: 700;
+    color: #1b1b1d;
+  }
+
+  .big-card-body p {
+    font-size: 1rem; /* 段落字體大小 */
+    color: #636368;
+    line-height: 1.6;
+  }
+  /* --- highlights 小卡片輪播 (手機版) --- */
+  .highlights-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* 確保內容不會溢出 */
+    padding: 0 40px; /* 為左右箭頭留出空間 */
+  }
+
+  .highlights {
+    display: flex;
+    overflow-x: scroll; /* 允許水平滾動 */
+    scroll-snap-type: x mandatory; /* 啟用滾動吸附 */
+    -webkit-overflow-scrolling: touch; /* iOS 流暢滾動 */
+    gap: 20px; /* 卡片間距 */
+    padding-bottom: 10px; /* 為滾動條留出空間 */
+    scrollbar-width: none;
+  }
+
+  .highlights::-webkit-scrollbar {
+    height: 0; /* 隱藏滾動條 */
+    background: transparent;
+  }
+  .highlights::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  section .card {
+    flex: 0 0 auto; /* 不伸縮不縮小，自動計算寬度 */
+    width: calc(100% - 40px); /* 讓一張卡片佔滿可視區域，減去 gap */
+    scroll-snap-align: center; /* 滾動時卡片居中對齊 */
+    max-width: 300px; /* 限制單張卡片在手機上的最大寬度 */
+    margin: 0 10px; /* 調整為左右各 10px 外邊距 */
+    padding: 20px 16px;
+    border: 1px solid #dfdfdf;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* 添加輕微陰影 */
+    text-align: center;
+  }
+
+  section .card-image {
+    padding: 0; /* 手機版圖片通常不需額外內邊距 */
+    margin: 0 auto 15px auto; /* 圖片下方留白 */
+    border-radius: 8px; /* 圖片圓角 */
+    width: 100%;
+    height: auto; /* 保持比例 */
+    max-height: 180px; /* 限制圖片高度 */
+    object-fit: cover;
+  }
+  section .card-title {
+    font-size: 1.1rem;
+    margin-block: 10px; /* 調整間距 */
+  }
+  section .card-intro {
+    /* 您 HTML 中沒有 .card-intro 了，這段會無效 */
+    color: #636368;
+    line-height: 160%;
+    font-size: 0.9rem;
+    margin: 0 auto;
+  }
+
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6); /* 手機版按鈕背景 */
+    color: white;
+    border: none;
+    font-size: 1.5rem; /* 手機版按鈕字體 */
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* 圓形按鈕 */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  .carousel-nav.prev {
+    left: 5px;
+  }
+  .carousel-nav.next {
+    right: 5px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 30px 8px;
+    text-align: center; /* 讓 footer 文字居中 */
+  }
+  footer p {
+    color: #878789;
+    font-size: 0.8rem;
+    margin-right: 0; /* 移除 auto margin */
+    width: 100%;
+  }
+  footer ul {
+    display: flex;
+    flex-wrap: wrap; /* 允許換行 */
+    gap: 6px;
+    justify-content: center; /* 連結居中 */
+    width: 100%;
+  }
+  footer li:not(:last-child)::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 0.75rem;
+    color: #878789;
+  }
+  footer a {
+    font-size: 0.85rem;
+  }
+} /* 手機版結束 */
+
+@media screen and (min-width: 768px) {
+  /* 電腦版開始 */
+
+  .wrap {
+    margin: 16px auto;
+    padding-inline: 20px;
+    min-width: 768px; /*設定最小寬度*/
+    max-width: 1240px; /*設定最大寬度*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  header {
+    display: flex;
+  }
+  header div.menu {
+    display: none;
+  }
+  .logo a {
+    font-family: "Courier New", Courier, monospace;
+    color: #0090f7;
+    text-indent: -999px;
+    /* display: block; */
+    width: 24px;
+    height: 29px;
+    background-image: url(image/logo-apple.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    overflow: hidden;
+  }
+  nav {
+    margin-left: auto;
+  }
+  nav ul {
+    display: flex;
+    gap: 14px;
+  }
+  nav ul a {
+    font-size: 1rem;
+    font-weight: 700;
+    display: block;
+    padding: 8px 28px;
+
+    border-radius: 1.5rem;
+    transition: 0.2s;
+  }
+  nav ul a:hover {
+    color: #0090f7;
+    font-size: 1.2rem;
+  }
+  .carousel-item img {
+    height: 700px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  /* 頁面主體內容 */
+  .content {
+    position: relative;
+    z-index: 1;
+    padding: 6rem 2rem;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    max-width: 600px;
+  }
+  .section2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  section.big-card {
+    padding: 30px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .big-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .big-card img {
+    width: 924px;
+  }
+  .big-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  h3.sub-title {
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin-block: 28px;
+  }
+  .highlights-wrapper {
+    position: relative;
+  }
+
+  .highlights {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2rem;
+    scroll-behavior: smooth;
+  }
+
+  .highlights::-webkit-scrollbar {
+    height: 8px;
+    display: none;
+  }
+  .highlights::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+
+  .highlights .card {
+    flex: 0 0 auto;
+    width: 250px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+      border-color 0.3s ease;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border: 2px solid transparent;
+  }
+
+  .highlights .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    border-color: #0077b6;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .carousel-nav.prev {
+    left: 0;
+  }
+  .carousel-nav.next {
+    right: 0;
+  }
+
+  footer {
+    display: flex;
+  }
+  footer {
+    padding: 30px 8px;
+  }
+  footer p {
+    color: #878789;
+    font-size: 0.8rem;
+    margin-right: auto;
+  }
+  footer ul {
+    display: flex;
+    gap: 6px;
+  }
+  footer li:not(:last-child)::after {
+    /*如果不是li的最後一個孩子，就在後面加上 | 符號*/
+    content: "|";
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 0.75rem;
+    color: #878789;
+  }
+  footer a {
+    font-size: 0.85rem;
+  }
+  /* 電腦的動態效果放在這裡 */
+
+  nav a {
+    opacity: 0;
+    animation: grow-up 0.5s ease-in-out forwards;
+  }
+
+  nav li:nth-child(1) a {
+    animation-delay: 0s;
+  }
+  nav li:nth-child(2) a {
+    animation-delay: 0.15s;
+  }
+  nav li:nth-child(3) a {
+    animation-delay: 0.3s;
+  }
+  nav li:nth-child(4) a {
+    animation-delay: 0.45s;
+  }
+  nav li:nth-child(5) a {
+    animation-delay: 0.6s;
+  }
+  nav li:nth-child(6)a {
+    animation-delay: 0.75s;
+  }
+  h2.main-title {
+    opacity: 0;
+    animation: fade-up 0.3s ease-in-out 0.8s forwards;
+  }
+
+  .card {
+    opacity: 0;
+    animation: fade-up 0.3s ease-in-out 0.8s forwards;
+  }
+  section div.card:nth-child(1) {
+    animation-delay: 1.5s;
+  }
+  section div.card:nth-child(2) {
+    animation-delay: 1.6s;
+  }
+  section div.card:nth-child(3) {
+    animation-delay: 1.7s;
+  }
+  section div.card:nth-child(4) {
+    animation-delay: 1.8s;
+  }
+
+  /* 設定動態效果 */
+  @keyframes zoom-in {
+    from {
+      opacity: 0;
+      clip-path: rect(450px 265px 265px 450px);
+    }
+    to {
+      opacity: 1;
+      clip-path: rect(0px 900px 530px 0px);
+    }
+  }
+  @keyframes grow-up {
+    from {
+      scale: 0;
+      opacity: 0;
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+  @keyframes fade-up {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+} /*電腦版結束*/
