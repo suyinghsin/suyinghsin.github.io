@@ -78,6 +78,7 @@ p {
   .marquee-wrapper {
     position: absolute;
     top: 0%;
+    z-index: -1;
   }
   .wrap {
     margin: auto;
