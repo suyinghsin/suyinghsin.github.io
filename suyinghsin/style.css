@@ -40,7 +40,8 @@ p {
 }
 /* 跑馬燈容器 */
 .marquee-wrapper {
- 
+  position: absolute;
+  top: 65%;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
