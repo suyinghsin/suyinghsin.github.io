@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="UI/UX 設計師作品集" />
+    <title>Su Ying Hsin — UI/UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="home-motion.css?v=20260909b" />
+    <link rel="stylesheet" href="su-particles.css?v=20260909d" />
+  </head>
+  <body class="home-page">
+    <a
+      class="skip-link"
+      href="#top"
+      data-zh="跳至主要內容"
+      data-en="Skip to main content"
+      >跳至主要內容</a
+    >
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top">SYH<span>／Portfolio</span></a>
+      <nav>
+        <a href="#work" data-zh="作品" data-en="Work">作品</a>
+        <a href="#about" data-zh="關於" data-en="About">關於</a>
+        <a href="#other-work" data-zh="精選" data-en="Featured">精選</a>
+        <a href="#contact" data-zh="聯絡" data-en="Contact">聯絡</a>
+      </nav>
+      <button class="language-toggle" type="button" aria-label="切換語言">
+        <span class="lang-zh active">中</span><i></i
+        ><span class="lang-en">EN</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="home-hero section-pad">
+        <div class="home-hero-copy reveal">
+          <p class="eyebrow">SU YING HSIN · 蘇映欣</p>
+          <h1 class="hero-title" aria-label="SU YING HSIN">
+            <span class="hero-title-row">SU</span>
+            <span class="hero-title-row">YING HSIN</span>
+          </h1>
+          <p data-zh="平面設計、網頁設計師" data-en="Graphic & Web Designer">
+            從資訊架構、視覺介面到互動前端，把複雜的問題整理成容易理解、願意使用的數位體驗。
+          </p>
+          <a class="text-link" href="#work"
+            ><span data-zh="查看專案作品" data-en="View selected work"
+              >查看專案作品</span
+            >
+            <span>↓</span></a
+          >
+        </div>
+        <div class="su-particle-stage" data-su-particles>
+          <canvas
+            class="su-particle-canvas"
+            aria-label="由粒子構成並持續流動的 SYH 標誌"
+          ></canvas>
+          <div class="su-particle-fallback" aria-hidden="true">SYH</div>
+          <p class="su-particle-status" role="status" aria-live="polite">
+            INITIALISING PARTICLE FIELD
+          </p>
+          <div class="su-particle-controls" aria-label="粒子動畫控制">
+            <button
+              type="button"
+              data-particle-mode
+              data-zh="切換星雲"
+              data-en="View nebula"
+              aria-pressed="false"
+            >
+              切換星雲
+            </button>
+            <button
+              type="button"
+              data-particle-resonate
+              data-zh="激起共振"
+              data-en="Resonate"
+            >
+              激起共振
+            </button>
+            <button
+              type="button"
+              data-particle-pause
+              data-zh="暫停"
+              data-en="Pause"
+              aria-pressed="false"
+            >
+              暫停
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="work section-pad">
+        <div class="section-heading reveal">
+          <p class="eyebrow">SELECTED WORK · 01—05</p>
+          <h2 data-zh="專案作品" data-en="Selected work">專案作品</h2>
+        </div>
+
+        <a
+          class="project-card project-feature reveal"
+          href="go-ride.html"
+          aria-label="查看定點GO完整專案"
+        >
+          <div class="project-copy">
+            <div>
+              <span class="project-index">01</span
+              ><span class="project-tag"
+                >BRAND EXPERIENCE · SERVICE DESIGN · PRODUCT</span
+              >
+            </div>
+            <h3 data-zh="定點GO" data-en="DIN DIAN GO">定點GO</h3>
+            <p
+              data-zh="從品牌識別延伸至數位產品，建立以固定路線、固定司機與固定時段為核心的日常接送體驗。"
+              data-en="From brand identity to digital product, creating a trusted daily mobility experience around fixed routes, drivers and schedules."
+            >
+              從品牌識別延伸至數位產品，建立以固定路線、固定司機與固定時段為核心的日常接送體驗。
+            </p>
+            <span
+              class="project-link"
+              data-zh="查看完整專案 ↗"
+              data-en="View case study ↗"
+              >查看完整案例 ↗</span
+            >
+          </div>
+          <div class="project-visual project-visual--go">
+            <img src="assets/mockup_定點go2.png" alt="定點GO App Mockup" />
+          </div>
+        </a>
+
+        <a
+          class="project-card project-feature project-emo reveal"
+          href="emo-site/index.html"
+          aria-label="開啟我獨自 EMO 網站"
+        >
+          <div class="project-copy">
+            <div>
+              <span class="project-index">02</span
+              ><span class="project-tag"
+                >INTERACTIVE WEB · NARRATIVE · FRONT-END</span
+              >
+            </div>
+            <h3 data-zh="我獨自 EMO" data-en="SOLO EMO">我獨自 EMO</h3>
+            <p
+              data-zh="以情緒勒索為題的畢業製作網站，透過敘事捲動、漂浮卡牌、3D 模型與情境測驗，將心理教育內容轉化為可探索的互動體驗。"
+              data-en="An interactive graduation project about emotional blackmail, translating psychoeducational content into an explorable experience through scroll narrative, floating cards, 3D models and a reflective quiz."
+            >
+              以情緒勒索為題的畢業製作網站，透過敘事捲動、漂浮卡牌、3D
+              模型與情境測驗，將心理教育內容轉化為可探索的互動體驗。
+            </p>
+            <span
+              class="project-link"
+              data-zh="進入互動網站 ↗"
+              data-en="Visit interactive site ↗"
+              >進入互動網站 ↗</span
+            >
+          </div>
+          <div class="project-visual emo-project-visual">
+            <img
+              class="emo-project-statement"
+              src="assets/emo縮圖.jpg"
+              alt="這場遊戲你被迫扮演了多久"
+            />
+          </div>
+        </a>
+
+        <section
+          id="other-work"
+          class="latest-drop reveal"
+          aria-label="Latest project"
+        >
+          <div class="latest-drop__mast">
+            <p>03 / OTHER PROJECTS</p>
+            <h3><span>其他作品</span></h3>
+          </div>
+          <div class="latest-drop__grid">
+            <!-- Change this href independently when this card has a new case-study page. -->
+            <a
+              class="latest-drop__card"
+              href="other-project-brand.html"
+              aria-label="查看 拍攝雜誌"
+            >
+              <figure>
+                <img src="assets/咖啡廳封面.jpg" alt="攝影及書籍裝幀" />
+              </figure>
+              <span>01</span>
+              <strong data-zh="拍攝雜誌" data-en="SAVOR Coffee Photo Book"
+                >拍攝雜誌</strong
+              >
+            </a>
+            <a
+              class="latest-drop__card"
+              href="other-project-emo.html"
+              aria-label="開啟我獨自 EMO 網站"
+            >
+              <figure>
+                <img
+                  src="assets/雲水間 名片mkup拷貝.jpg"
+                  alt="品牌識別與應用"
+                />
+              </figure>
+              <span>02</span>
+              <strong data-zh="品牌識別與應用" data-en="SOLO EMO"
+                >品牌識別與應用</strong
+              >
+            </a>
+            <a
+              class="latest-drop__card"
+              href="other-project-visual.html"
+              aria-label="查看第三個作品"
+            >
+              <figure>
+                <img src="assets/鍵盤情境照 拷貝.jpg" alt="文創周邊設計" />
+              </figure>
+              <span>03</span>
+              <strong data-zh="文創周邊設計" data-en="DIN DIAN GO Visual System"
+                >文創周邊設計</strong
+              >
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <section id="about" class="about section-pad reveal">
+        <p class="eyebrow">ABOUT</p>
+        <div class="about-grid">
+          <div>
+            <p
+              data-zh="畢業於國立臺灣藝術大學視覺傳達設計系。擅長將視覺美學轉化為商業行銷力，具備從廣告設計、網站設計到品牌社群視覺的全方位執行能力。能穩定產出高品質視覺內容，能精準掌握產業需求並高效執行專案。"
+              data-en="I graduated from the Department of Visual Communication Design at National Taiwan University of Arts. I specialise in translating visual aesthetics into effective commercial communication, with versatile experience spanning advertising, web design and social-media visuals for brands. I deliver high-quality visual work with a clear understanding of industry needs and efficient project execution."
+            >
+              畢業於國立臺灣藝術大學視覺傳達設計系。擅長將視覺美學轉化為商業行銷力，具備從廣告設計、網站設計到品牌社群視覺的全方位執行能力。能穩定產出高品質視覺內容，能精準掌握產業需求並高效執行專案。
+            </p>
+            <p
+              data-zh="同時我也具備 HTML、CSS
+              的實作理解，能在設計階段同步考慮響應式行為、效能與工程協作。"
+              data-en="I also have hands-on knowledge of HTML, CSS and interaction animation, allowing me to consider responsive behavior, performance and engineering collaboration throughout the design process."
+            >
+              同時我也具備 HTML、CSS
+              的實作理解，能在設計階段同步考慮響應式行為、效能與工程協作。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section-pad reveal">
+        <p class="eyebrow">CONTACT</p>
+        <h2 data-zh=" SU YING HSIN" data-en=" SU YING HSIN.">SU YING HSIN</h2>
+
+        <a href="mailto:your@email.com">vickychiang29@gmail.com ↗</a>
+      </section>
+    </main>
+    <footer class="site-footer section-pad">
+      <p>Designed with intention, built with curiosity.</p>
+      <p>© 2026 Su Ying Hsin</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="su-particles.js?v=20260909c"></script>
+  </body>
+</html>

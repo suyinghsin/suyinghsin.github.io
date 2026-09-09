@@ -1,0 +1,402 @@
+/* SU particle opening — isolated final cascade */
+.home-page .home-hero {
+  min-height: 100svh;
+  padding: 106px clamp(24px, 4.5vw, 76px) 32px;
+  display: grid;
+  grid-template-columns: minmax(270px, 0.72fr) minmax(520px, 1.28fr);
+  gap: clamp(24px, 3vw, 56px);
+  align-items: stretch;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 73% 44%, rgba(97, 203, 209, 0.095), transparent 34%),
+    linear-gradient(135deg, #0a0c0d 0%, #0d1112 54%, #111617 100%);
+}
+
+.home-page .home-hero::before,
+.home-page .home-hero::after,
+.home-page .hero-compass,
+.home-page .hero-marquee,
+.home-page .hero-orbit,
+.home-page .hero-type {
+  display: none !important;
+}
+
+.home-page .home-hero-copy {
+  position: relative;
+  z-index: 4;
+  min-height: calc(100svh - 138px);
+  padding: clamp(24px, 3.4vw, 52px) 0 clamp(26px, 3vw, 46px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.home-page .home-hero .eyebrow {
+  margin: 0;
+  color: rgba(243, 240, 232, 0.58);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.home-page .home-hero-copy h1 {
+  max-width: none !important;
+  margin: clamp(62px, 11vh, 122px) 0 0 !important;
+  color: #f3f0e8;
+  font-size: clamp(62px, 6.2vw, 96px) !important;
+  font-weight: 500;
+  line-height: 0.84 !important;
+  letter-spacing: -0.075em !important;
+}
+
+.home-page .home-hero-copy > p:not(.eyebrow) {
+  max-width: 420px;
+  margin: auto 0 26px !important;
+  color: rgba(243, 240, 232, 0.68) !important;
+  font-size: 14px !important;
+  line-height: 1.82 !important;
+  text-wrap: pretty;
+}
+
+.home-page .home-hero .text-link {
+  width: min(100%, 420px);
+  color: #f3f0e8;
+  border-color: rgba(243, 240, 232, 0.62);
+}
+
+.su-particle-stage {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  min-height: calc(100svh - 138px);
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(rgba(243, 240, 232, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 240, 232, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  touch-action: none;
+}
+
+.su-particle-stage::before {
+  content: none;
+}
+
+.su-particle-stage::after {
+  content: "LIVE PARTICLE SYSTEM";
+  position: absolute;
+  z-index: 4;
+  right: 22px;
+  top: 20px;
+  color: #61cbd1;
+  font: 600 8px/1 Inter, sans-serif;
+  letter-spacing: 0.17em;
+  pointer-events: none;
+}
+
+.su-particle-canvas {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+}
+
+.su-particle-fallback {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(97, 203, 209, 0.78);
+  font: 600 clamp(104px, 18vw, 270px)/0.8 Inter, sans-serif;
+  letter-spacing: -0.12em;
+  text-shadow: 0 0 50px rgba(97, 203, 209, 0.28);
+  transition: opacity 0.5s ease;
+}
+
+.su-particle-stage.is-ready .su-particle-fallback {
+  opacity: 0;
+}
+
+.su-particle-status {
+  position: absolute;
+  z-index: 5;
+  right: 22px;
+  bottom: 62px;
+  margin: 0;
+  color: rgba(243, 240, 232, 0.48);
+  font: 600 8px/1 Inter, sans-serif;
+  letter-spacing: 0.15em;
+  pointer-events: none;
+}
+
+.su-particle-stage.is-ready .su-particle-status {
+  color: rgba(97, 203, 209, 0.72);
+}
+
+.su-particle-controls {
+  position: absolute;
+  z-index: 6;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+  pointer-events: none;
+}
+
+.su-particle-controls button {
+  min-height: 31px;
+  padding: 0 12px;
+  border: 1px solid rgba(243, 240, 232, 0.22);
+  border-radius: 100px;
+  background: rgba(10, 13, 14, 0.56);
+  color: rgba(243, 240, 232, 0.72);
+  font: 500 9px/1 "Noto Sans TC", Inter, sans-serif;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+.su-particle-controls button:hover,
+.su-particle-controls button:focus-visible,
+.su-particle-controls button[aria-pressed="true"] {
+  outline: none;
+  border-color: rgba(97, 203, 209, 0.72);
+  background: rgba(97, 203, 209, 0.1);
+  color: #baf5f7;
+}
+
+.su-particle-stage.is-error .su-particle-fallback {
+  opacity: 1;
+}
+
+.su-particle-stage.is-error .su-particle-status {
+  color: #f3f0e8;
+}
+
+@media (max-width: 900px) {
+  .home-page .home-hero {
+    min-height: 100svh;
+    padding: 88px 20px 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(430px, 61svh);
+    gap: 24px;
+  }
+
+  .home-page .home-hero-copy {
+    min-height: 0;
+    padding: 12px 0 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .home-page .home-hero .eyebrow {
+    grid-column: 1 / -1;
+  }
+
+  .home-page .home-hero-copy h1 {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0 !important;
+    font-size: clamp(48px, 13vw, 62px) !important;
+    line-height: 0.86 !important;
+  }
+
+  .home-page .home-hero-copy > p:not(.eyebrow) {
+    grid-column: 1;
+    grid-row: 3;
+    max-width: 27em;
+    margin: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.68 !important;
+  }
+
+  .home-page .home-hero .text-link {
+    display: none;
+  }
+
+  .su-particle-stage {
+    min-height: 430px;
+    border-top: 1px solid rgba(243, 240, 232, 0.13);
+    border-left: 0;
+    background-size: 48px 48px;
+  }
+
+  .su-particle-stage::before,
+  .su-particle-stage::after {
+    top: 15px;
+    font-size: 7px;
+  }
+
+  .su-particle-stage::before { left: 14px; }
+  .su-particle-stage::after { right: 14px; }
+
+  .su-particle-status {
+    right: 14px;
+    bottom: 58px;
+    font-size: 7px;
+  }
+
+  .su-particle-controls {
+    right: 10px;
+    bottom: 12px;
+    left: 10px;
+    justify-content: center;
+  }
+
+  .su-particle-controls button {
+    flex: 1 1 0;
+    max-width: 118px;
+    padding: 0 6px;
+    font-size: 8px;
+  }
+}
+
+/* Tablet and small-laptop composition: keep the identity readable before the
+   particle field takes over the lower half of the opening. */
+@media (min-width: 681px) and (max-width: 900px) {
+  .home-page .home-hero {
+    padding-right: clamp(30px, 6vw, 52px);
+    padding-left: clamp(30px, 6vw, 52px);
+    grid-template-rows: auto minmax(440px, 58svh);
+  }
+
+  .home-page .home-hero-copy {
+    grid-template-columns: minmax(250px, 0.78fr) minmax(300px, 1.22fr);
+    grid-template-rows: auto auto;
+    column-gap: clamp(38px, 7vw, 72px);
+    row-gap: 28px;
+  }
+
+  .home-page .home-hero-copy h1 {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: clamp(54px, 8vw, 72px) !important;
+  }
+
+  .home-page .home-hero-copy > p:not(.eyebrow) {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+    max-width: 34em;
+    font-size: 13px !important;
+  }
+
+  .su-particle-stage {
+    min-height: 440px;
+  }
+
+  .home-page .about,
+  .home-page .contact {
+    padding-top: 112px;
+    padding-bottom: 112px;
+  }
+}
+
+@media (max-width: 430px) {
+  .home-page .home-hero {
+    grid-template-rows: auto minmax(390px, 57svh);
+  }
+
+  .home-page .home-hero-copy h1 {
+    font-size: clamp(44px, 12.5vw, 56px) !important;
+  }
+
+  .home-page .home-hero-copy > p:not(.eyebrow) {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .su-particle-stage {
+    min-height: 390px;
+  }
+
+  .home-page .site-header {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .home-page .brand span {
+    font-size: 11px;
+  }
+
+  .home-page .language-toggle {
+    flex: 0 0 auto;
+  }
+
+  .home-page .work {
+    padding-top: 92px;
+    padding-bottom: 110px;
+  }
+
+  .home-page .section-heading h2 {
+    font-size: clamp(54px, 16vw, 68px);
+  }
+
+  .home-page .about,
+  .home-page .contact {
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
+
+  .home-page .about-grid {
+    padding-top: 22px;
+  }
+
+  .home-page .about-grid p {
+    max-width: none;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .home-page .contact h2 {
+    margin-top: 15px;
+    font-size: clamp(38px, 11.5vw, 48px);
+    letter-spacing: -0.055em;
+  }
+
+  .home-page .contact a {
+    overflow-wrap: anywhere;
+  }
+
+  .home-page .site-footer {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 680px) {
+  .home-page .home-hero-copy h1.hero-title {
+    display: flex;
+    align-items: baseline;
+    white-space: nowrap;
+    font-size: clamp(40px, 12.4vw, 50px) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.075em !important;
+  }
+
+  .home-page .hero-title-row {
+    display: inline;
+  }
+
+  .home-page .su-particle-stage {
+    border-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .su-particle-canvas { cursor: default; }
+  .su-particle-controls [data-particle-mode],
+  .su-particle-controls [data-particle-resonate] { display: none; }
+}

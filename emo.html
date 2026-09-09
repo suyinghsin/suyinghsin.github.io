@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="我獨自 EMO 情緒勒索互動網站設計與前端實作案例"
+    />
+    <title>我獨自 EMO — Interactive Web Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="case-page emo-case">
+    <a
+      class="skip-link"
+      href="#main-content"
+      data-zh="跳至主要內容"
+      data-en="Skip to main content"
+      >跳至主要內容</a
+    >
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html"
+        >←
+        <span data-zh="返回作品集" data-en="Back to portfolio"
+          >返回作品集</span
+        ></a
+      >
+      <nav aria-label="案例導覽">
+        <a href="#concept">Concept</a>
+        <a href="#experience">Experience</a>
+        <a href="#role">Role</a>
+        <a href="#reflection">Reflection</a>
+      </nav>
+      <button class="language-toggle" type="button" aria-label="切換語言">
+        <span class="lang-zh active">中</span><i></i
+        ><span class="lang-en">EN</span>
+      </button>
+    </header>
+
+    <main id="main-content">
+      <section class="case-intro section-pad emo-case-intro">
+        <div class="case-intro__copy reveal">
+          <p class="eyebrow">INTERACTIVE WEB · NARRATIVE · FRONT-END</p>
+          <h1 data-zh="我獨自 EMO" data-en="SOLO EMO">我獨自 EMO</h1>
+          <p
+            class="case-intro__statement"
+            data-zh="讓難以辨識的情緒壓力，成為可以停下來觀看的體驗。"
+            data-en="Turning invisible emotional pressure into an experience people can pause and examine."
+          >
+            讓難以辨識的情緒壓力，成為可以停下來觀看的體驗。
+          </p>
+        </div>
+        <dl class="case-facts reveal" data-delay="100">
+          <div>
+            <dt>Role</dt>
+            <dd>Web Design & Development</dd>
+          </div>
+          <div>
+            <dt>Format</dt>
+            <dd>Graduation Project · Team</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2026</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section
+        class="emo-case-cover section-pad reveal"
+        aria-label="我獨自 EMO 專案主視覺"
+      >
+        <img
+          class="emo-cover-statement"
+          src="assets/emo/statement.png"
+          alt="這場遊戲你被迫扮演了多久"
+        />
+        <div class="emo-cover-cards" aria-hidden="true">
+          <img src="assets/emo/card-01.png" alt="" />
+          <img src="assets/emo/card-02.png" alt="" />
+          <img src="assets/emo/card-03.png" alt="" />
+        </div>
+      </section>
+
+      <section id="concept" class="story-section emo-concept section-pad">
+        <p class="story-index reveal">01 / EXPERIENCE CONCEPT</p>
+        <div class="story-heading reveal">
+          <h2
+            data-zh="不是解釋一個名詞，而是讓人感受到關係裡的迷霧。"
+            data-en="Not merely explaining a term, but making the fog within relationships perceptible."
+          >
+            不是解釋一個名詞，而是讓人感受到關係裡的迷霧。
+          </h2>
+          <p
+            data-zh="情緒勒索經常以關心、責任與罪惡感出現。網站從日常熟悉的語句開始，逐步帶入 F.O.G.、循環辨識、界線練習與自我覺察。"
+            data-en="Emotional blackmail often appears as care, obligation or guilt. The website begins with familiar phrases and gradually introduces F.O.G., recurring patterns, boundary practice and reflection."
+          >
+            情緒勒索經常以關心、責任與罪惡感出現。網站從日常熟悉的語句開始，逐步帶入
+            F.O.G.、循環辨識、界線練習與自我覺察。
+          </p>
+        </div>
+        <div class="emo-word-gallery">
+          <figure class="reveal">
+            <img src="assets/emo/words-01.jpg" alt="你以前不是這樣的情境圖" />
+            <figcaption>熟悉語句作為敘事入口</figcaption>
+          </figure>
+          <figure class="reveal" data-delay="70">
+            <img
+              src="assets/emo/words-02.jpg"
+              alt="欸你現在是在擺什麼臉色情境圖"
+            />
+            <figcaption>把無形壓力轉成可見畫面</figcaption>
+          </figure>
+          <figure class="reveal" data-delay="140">
+            <img src="assets/emo/words-03.jpg" alt="開個玩笑情境圖" />
+            <figcaption>從生活情境建立共感</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="experience" class="emo-experience section-pad">
+        <p class="story-index reveal">02 / INTERACTION SYSTEM</p>
+        <div class="story-heading reveal">
+          <h2
+            data-zh="讓互動推進理解，而不是只增加裝飾。"
+            data-en="Using interaction to advance understanding rather than decorate the page."
+          >
+            讓互動推進理解，而不是只增加裝飾。
+          </h2>
+          <p
+            data-zh="每一種動態都對應一個閱讀目的：建立氛圍、引導探索、呈現關係中的拉扯，或讓使用者停下來回應。"
+            data-en="Each motion serves a reading purpose: setting the atmosphere, guiding exploration, expressing tension or inviting the viewer to pause and respond."
+          >
+            每一種動態都對應一個閱讀目的：建立氛圍、引導探索、呈現關係中的拉扯，或讓使用者停下來回應。
+          </p>
+        </div>
+        <div class="emo-experience-list">
+          <article class="reveal">
+            <span>01</span>
+            <h3>Floating Cards</h3>
+            <p
+              data-zh="以 Three.js 建立首頁漂浮卡牌，讓使用者先進入一個不穩定、被語句包圍的情緒空間。"
+              data-en="Three.js floating cards establish an unstable emotional space surrounded by familiar phrases."
+            >
+              以 Three.js
+              建立首頁漂浮卡牌，讓使用者先進入一個不穩定、被語句包圍的情緒空間。
+            </p>
+          </article>
+          <article class="reveal">
+            <span>02</span>
+            <h3>Scroll Narrative</h3>
+            <p
+              data-zh="透過章節節奏、交錯圖像與捲動進場，把心理教育內容拆成可逐步理解的敘事。"
+              data-en="Section pacing, alternating imagery and scroll reveals divide psychoeducational content into an approachable narrative."
+            >
+              透過章節節奏、交錯圖像與捲動進場，把心理教育內容拆成可逐步理解的敘事。
+            </p>
+          </article>
+          <article class="reveal">
+            <span>03</span>
+            <h3>3D Exploration</h3>
+            <p
+              data-zh="可拖曳卡盒與物理模型保留畢製的遊戲性，讓觀看從單向閱讀變成主動探索。"
+              data-en="A draggable card box and physics-based models retain the project's playful nature and invite active exploration."
+            >
+              可拖曳卡盒與物理模型保留畢製的遊戲性，讓觀看從單向閱讀變成主動探索。
+            </p>
+          </article>
+          <article class="reveal">
+            <span>04</span>
+            <h3>Reflective Quiz</h3>
+            <p
+              data-zh="以五題日常情境回看自己的慣性反應，結果提供覺察線索而不是替使用者貼標籤。"
+              data-en="Five everyday scenarios surface habitual responses, offering reflection prompts instead of fixed labels."
+            >
+              以五題日常情境回看自己的慣性反應，結果提供覺察線索而不是替使用者貼標籤。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="emo-live-section section-pad">
+        <div class="emo-live-visual reveal">
+          <img src="assets/emo/quiz.png" alt="你是勒索者還是被勒索的人" />
+          <img src="assets/emo/cube-01.jpg" alt="我獨自 EMO 互動卡盒" />
+        </div>
+        <div class="emo-live-copy reveal" data-delay="80">
+          <p class="story-index">03 / LIVE EXPERIENCE</p>
+          <h2
+            data-zh="完整網站本身，就是這個案例最重要的原型。"
+            data-en="The complete website is the most important prototype of this case."
+          >
+            完整網站本身，就是這個案例最重要的原型。
+          </h2>
+          <p
+            data-zh="建議使用桌機開啟完整體驗；手機版亦針對閱讀順序、觸控尺寸與 3D 互動重新調整。"
+            data-en="Desktop offers the fullest experience, while mobile is carefully adapted for reading order, touch targets and 3D interaction."
+          >
+            建議使用桌機開啟完整體驗；手機版亦針對閱讀順序、觸控尺寸與 3D
+            互動重新調整。
+          </p>
+          <a
+            class="emo-live-link"
+            href="emo-site/index.html"
+            target="_blank"
+            rel="noopener"
+            data-zh="開啟完整互動網站 ↗"
+            data-en="Open the full interactive website ↗"
+            >開啟完整互動網站 ↗</a
+          >
+        </div>
+      </section>
+
+      <section id="role" class="emo-role section-pad">
+        <p class="story-index reveal">04 / ROLE & COLLABORATION</p>
+        <div class="emo-role-grid">
+          <article class="reveal">
+            <span>MY ROLE</span>
+            <h3
+              data-zh="網站設計與前端製作"
+              data-en="Web design and front-end development"
+            >
+              網站設計與前端製作
+            </h3>
+            <p
+              data-zh="負責網站資訊架構、視覺介面、響應式排版、捲動敘事與 3D／互動前端整合。"
+              data-en="Responsible for information architecture, visual UI, responsive layout, scroll narrative and 3D interaction integration."
+            >
+              負責網站資訊架構、視覺介面、響應式排版、捲動敘事與
+              3D／互動前端整合。
+            </p>
+          </article>
+          <article class="reveal" data-delay="80">
+            <span>TEAM PROJECT</span>
+            <h3
+              data-zh="卡牌視覺與 3D 模型"
+              data-en="Card artwork and 3D models"
+            >
+              卡牌視覺與 3D 模型
+            </h3>
+            <p
+              data-zh="卡牌繪圖與 3D 模型由團隊成員製作，並由我整合進網站體驗。"
+              data-en="Card illustrations and 3D models were created by teammates and integrated by me into the website experience."
+            >
+              卡牌繪圖與 3D 模型由團隊成員製作，並由我整合進網站體驗。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="reflection"
+        class="case-reflection section-pad emo-reflection"
+      >
+        <p class="story-index reveal">05 / REFLECTION</p>
+        <div class="case-reflection__grid">
+          <h2
+            class="reveal"
+            data-zh="把沉重內容，轉化成願意停留的體驗。"
+            data-en="Turning a difficult subject into an experience people are willing to stay with."
+          >
+            把沉重內容，轉化成願意停留的體驗。
+          </h2>
+          <p
+            class="reveal"
+            data-delay="80"
+            data-zh="這個專案讓我練習在視覺張力、資訊責任與互動趣味之間取得平衡。網站不只需要吸引目光，也必須讓敏感內容被清楚、克制且不貼標籤地理解。"
+            data-en="This project taught me to balance visual tension, information responsibility and playful interaction. The experience needed to attract attention while presenting sensitive content clearly, carefully and without labeling people."
+          >
+            這個專案讓我練習在視覺張力、資訊責任與互動趣味之間取得平衡。網站不只需要吸引目光，也必須讓敏感內容被清楚、克制且不貼標籤地理解。
+          </p>
+        </div>
+        <a
+          class="back-home reveal"
+          href="index.html"
+          data-zh="返回所有作品 ↗"
+          data-en="Back to all work ↗"
+          >返回所有作品 ↗</a
+        >
+      </section>
+    </main>
+
+    <footer class="site-footer section-pad">
+      <p>Designed with intention, built with curiosity.</p>
+      <p>我獨自 EMO · Interactive Web Experience</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

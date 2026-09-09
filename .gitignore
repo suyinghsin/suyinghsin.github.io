@@ -1,0 +1,53 @@
+# macOS / editor files
+.DS_Store
+**/.DS_Store
+.vscode/
+.idea/
+
+# Local preview and temporary files
+__responsive-check.html
+*.log
+
+# Source assets retained locally but not used by the published website
+/assets/go-app-showcase.webm
+/assets/emo縮圖.png
+/assets/go-hero-mockup-v2.png
+/assets/go-stationery-mockup-v1.png
+/assets/0418LOGOTYPE-05拷貝.png
+/assets/RGB最終版本1拷貝.jpg
+/assets/RGB最終版本2拷貝.jpg
+/assets/RGB最終版本3 拷貝.jpg
+/assets/咖啡廳照片-*.png
+/assets/0.0_搭乘.jpg
+/assets/0.0.1_搭乘.jpg
+/assets/0.0.2_搭乘.jpg
+/assets/0.0.2.1_搭乘.jpg
+/assets/0.1.3_服務評價.jpg
+/assets/0.1.4_預約.jpg
+/assets/0.11_立刻搭乘.jpg
+/assets/1.0訊息.jpg
+/assets/1.1 訊息.jpg
+/assets/1.2 訊息入口.jpg
+/assets/20_主頁.jpg
+/assets/3.0_帳戶.jpg
+/assets/3.0.1_已綁定合約.jpg
+/assets/3.1_帳戶.jpg
+/assets/3.1.2_帳戶.jpg
+/assets/3.1.3_帳戶.jpg
+/assets/3.2.1_錢包.jpg
+/assets/手機模擬.jpg
+/assets/搭乘提醒.jpg
+/assets/登入畫面.jpg
+/assets/等待動畫.jpg
+/assets/等待動畫2.jpg
+/assets/註冊畫面.jpg
+/assets/選擇身份.jpg
+/assets/雲水間logo-01.png
+/emo-site/img/smock.png
+/emo-site/img/三連星星.png
+/emo-site/img/上下裝飾.png
+/emo-site/img/你是否聽過那熟悉而讓人不適的話.png
+/emo-site/img/公司不缺你一個.png
+/emo-site/img/別人家的孩子都不會這樣.png
+/emo-site/img/卡 1217回答-08.png
+/emo-site/img/當不成朋友拉.png
