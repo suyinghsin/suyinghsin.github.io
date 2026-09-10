@@ -9,6 +9,12 @@ __responsive-check.html
 *.log
 
 # Source assets retained locally but not used by the published website
+/assets/emo縮圖.jpg
+/assets/mockup_定點go2.png
+/assets/go-stationery-mockup-premium.png
+/assets/咖啡廳封面.jpg
+/assets/主要手機.png
+/emo-site/img/沒事好處都先給你.jpg
 /assets/go-app-showcase.webm
 /assets/emo縮圖.png
 /assets/go-hero-mockup-v2.png
