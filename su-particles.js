@@ -7,6 +7,23 @@
   const modeButton = stage.querySelector('[data-particle-mode]');
   const resonateButton = stage.querySelector('[data-particle-resonate]');
   const pauseButton = stage.querySelector('[data-particle-pause]');
+  const mobileParticlesDisabled = window.matchMedia(
+    '(max-width: 680px), (pointer: coarse)'
+  ).matches;
+
+  // Do not create a WebGL context or register pointer handlers on touch-first
+  // phones. The static mark keeps the identity while the page remains native
+  // to vertical scrolling.
+  if (mobileParticlesDisabled) {
+    stage.classList.add('is-mobile-static');
+    canvas.hidden = true;
+    status.hidden = true;
+    modeButton.hidden = true;
+    resonateButton.hidden = true;
+    pauseButton.hidden = true;
+    return;
+  }
+
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const gl = canvas.getContext('webgl', {
     alpha: true,
