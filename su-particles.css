@@ -377,13 +377,44 @@
 }
 
 @media (max-width: 680px) {
+  .home-page .home-hero {
+    position: relative;
+    min-height: 100svh;
+    padding: 88px 20px 24px;
+    display: block;
+  }
+
+  .home-page .home-hero-copy {
+    position: absolute;
+    z-index: 4;
+    right: 20px;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    left: 20px;
+    min-height: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home-page .home-hero .eyebrow {
+    margin: 0 0 4px;
+  }
+
   .home-page .home-hero-copy h1.hero-title {
     display: flex;
     align-items: baseline;
     white-space: nowrap;
+    margin: 0 !important;
     font-size: clamp(40px, 12.4vw, 50px) !important;
     line-height: 0.9 !important;
     letter-spacing: -0.075em !important;
+  }
+
+  .home-page .home-hero-copy > p:not(.eyebrow) {
+    max-width: 30em;
+    margin: 0 !important;
   }
 
   .home-page .hero-title-row {
@@ -391,6 +422,8 @@
   }
 
   .home-page .su-particle-stage {
+    position: absolute;
+    inset: 88px 0 0;
     min-height: 240px;
     border-top: 0;
     touch-action: pan-y;
