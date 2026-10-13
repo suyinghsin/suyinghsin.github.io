@@ -422,44 +422,7 @@
   }
 
   .home-page .su-particle-stage {
-    position: absolute;
-    inset: 88px 0 0;
-    min-height: 240px;
-    border-top: 0;
-    touch-action: pan-y;
-    pointer-events: none;
-  }
-
-  .home-page .su-particle-stage::after,
-  .home-page .su-particle-canvas,
-  .home-page .su-particle-status,
-  .home-page .su-particle-controls {
     display: none !important;
-  }
-
-  .home-page .su-particle-fallback,
-  .home-page .su-particle-stage.is-mobile-static .su-particle-fallback {
-    opacity: 1;
-    font-size: clamp(96px, 31vw, 150px);
-  }
-}
-
-@media (pointer: coarse) {
-  .home-page .su-particle-stage {
-    touch-action: pan-y;
-    pointer-events: none;
-  }
-
-  .home-page .su-particle-stage::after,
-  .home-page .su-particle-canvas,
-  .home-page .su-particle-status,
-  .home-page .su-particle-controls {
-    display: none !important;
-  }
-
-  .home-page .su-particle-fallback,
-  .home-page .su-particle-stage.is-mobile-static .su-particle-fallback {
-    opacity: 1;
   }
 }
 

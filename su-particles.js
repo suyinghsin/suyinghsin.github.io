@@ -7,13 +7,11 @@
   const modeButton = stage.querySelector('[data-particle-mode]');
   const resonateButton = stage.querySelector('[data-particle-resonate]');
   const pauseButton = stage.querySelector('[data-particle-pause]');
-  const mobileParticlesDisabled = window.matchMedia(
-    '(max-width: 680px), (pointer: coarse)'
-  ).matches;
+  const mobileParticlesDisabled = window.matchMedia('(max-width: 680px)').matches;
 
-  // Do not create a WebGL context or register pointer handlers on touch-first
-  // phones. The static mark keeps the identity while the page remains native
-  // to vertical scrolling.
+  // Do not create a WebGL context or register pointer handlers on phones.
+  // The particle stage is removed entirely at this breakpoint so vertical
+  // scrolling stays native and responsive.
   if (mobileParticlesDisabled) {
     stage.classList.add('is-mobile-static');
     canvas.hidden = true;
